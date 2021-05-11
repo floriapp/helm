@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  floritest:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-05-11T15:31:53.542113162Z"
+    description: A Helm chart for Kubernetes
+    digest: 20dd591fb3e6bc052cef29efa33dbf975f30f7110ea8310c5ffbf347faa23759
+    name: floritest
+    type: application
+    urls:
+    - https://github.com/floriapp/helm/releases/download/floritest-0.1.0/floritest-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-05-11T15:31:53.542118962Z"
