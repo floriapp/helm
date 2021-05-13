@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: floriapp
+  name: mongo
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "floriapp-mongodb.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: mongodb
+  serviceName: db
+  template:
+    metadata:
+      labels:
+        {{- include "floriapp-mongodb.labels" . | nindent 8 }}
+        app.kubernetes.io/component: mongodb
+    spec:
+      containers:
+      - name: mongo
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        command:
+        - mongod
+        - --replSet
+        - rs0
+        - --bind_ip_all
+        ports:
+        - containerPort: 27017
+          name: mongodb
+        resources:
+          requests:
+            memory: {{ .Values.resources.requests.memory }}
+          limits:
+            memory: {{ .Values.resources.limits.memory }}
+        volumeMounts:
+        - mountPath: /data/db
+          name: mongo-data
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 10
+  volumeClaimTemplates:
+  - metadata:
+      name: mongo-data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: {{ .Values.storage.size }}
+      {{- if .Values.storage.className }}
+      storageClassName: {{ .Values.storage.className }}
+      {{- end }}

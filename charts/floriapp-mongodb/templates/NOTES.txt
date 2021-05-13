@@ -1,0 +1,18 @@
+1. Manual initialize the replicaset, by running these commands:
+
+  #start a shell session
+  mongo
+  rs.status()
+  rs.initialize()
+  rs.status()
+  show dbs
+
+2. Manual add additional nodes to the replica set
+
+  #start a shell session
+  mongo
+  rs.status()
+  rs.add("mongo-99:27017")
+  rs.status()
+  #https://docs.mongodb.com/manual/reference/method/rs.add/
+
