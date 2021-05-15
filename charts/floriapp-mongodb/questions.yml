@@ -1,0 +1,24 @@
+questions:
+# Storage
+- variable: storage.className
+  default: ""
+  description: "Specify Storage Class Name to use"
+  type: string
+  label: "Storage Class Name"
+  group: "Storage Settings"
+- variable: storage.size
+  default: "2Gi"
+  description: "Specify Storage Size to request"
+  type: string
+  label: "Storage Size"
+  required: true
+  group: "Storage Settings"
+  
+# Replica  
+- variable: replicaCount
+  default: "1"
+  description: "Number of mongod nodes"
+  type: string
+  label: "Replica count"
+  required: true
+  group: "Replica Settings"
