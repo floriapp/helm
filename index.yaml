@@ -3,6 +3,17 @@ entries:
   floriapp-mongodb:
   - apiVersion: v2
     appVersion: 4.4.6
+    created: "2021-05-15T02:04:10.377349119Z"
+    description: Install Mongodb configured as a statefulset for use with a flori.app
+      application in kubernetes
+    digest: e34fc9e6eb8885cda221274bb44fe943e61385136098a931202050ec0fcbb8bd
+    name: floriapp-mongodb
+    type: application
+    urls:
+    - https://github.com/floriapp/helm/releases/download/floriapp-mongodb-0.1.6/floriapp-mongodb-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 4.4.6
     created: "2021-05-13T21:02:06.38554767Z"
     description: Install Mongodb configured as a statefulset for use with a flori.app
       application in kubernetes
@@ -45,4 +56,4 @@ entries:
     urls:
     - https://github.com/floriapp/helm/releases/download/floritest-0.1.0/floritest-0.1.0.tgz
     version: 0.1.0
-generated: "2021-05-13T21:02:06.38556327Z"
+generated: "2021-05-15T02:04:10.377608922Z"
