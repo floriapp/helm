@@ -1,7 +1,30 @@
 questions:
+# Database  
+- variable: replicaCount
+  default: "1"
+  description: "Number of mongod nodes"
+  type: string
+  label: "Replica count"
+  required: true
+  group: "Database Settings"
+- variable: resources.requests.memory
+  default: "512Mi"
+  description: "Initial mongodb node memory request"
+  type: string
+  label: "Memory request"
+  required: true
+  group: "Database Settings"
+- variable: resources.limits.memory
+  default: "1Gi"
+  description: "Mongodb node memory limit"
+  type: string
+  label: "Memory limit"
+  required: true
+  group: "Database Settings"
+
 # Storage
 - variable: storage.className
-  default: ""
+  default: "my-floriapp-local-storage"
   description: "Specify Storage Class Name to use"
   type: string
   label: "Storage Class Name"
@@ -14,11 +37,3 @@ questions:
   required: true
   group: "Storage Settings"
   
-# Replica  
-- variable: replicaCount
-  default: "1"
-  description: "Number of mongod nodes"
-  type: string
-  label: "Replica count"
-  required: true
-  group: "Replica Settings"
