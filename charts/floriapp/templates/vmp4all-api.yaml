@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vmp4all-api
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+  - name: https
+    port: 443
+    protocol: TCP
+  selector:
+    {{- include "floriapp.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: vmp4all-api
+  type: ClusterIP
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vmp4all-api
+  labels:
+    {{- include "floriapp.labels" . | nindent 4 }}
+    app.kubernetes.io/component: vmp4all-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "floriapp.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: vmp4all-api
+  template:
+    metadata:
+      labels:
+        {{- include "floriapp.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: vmp4all-api
+    spec:
+      containers:
+      - name: floriapp-api
+        image: "{{ .Values.image.repository }}/vmp4all-api:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 80
+          name: http
+        - containerPort: 443
+          name: https
+        resources:
+          limits:
+            memory: 4Gi
+          requests:
+            memory: 2Gi
+        volumeMounts:
+        - name: vmp4all-api-config-volume
+          mountPath: /app/config
+          readOnly: true
+      imagePullSecrets:
+      - name: acr-lakerfield
+      volumes:
+      - name: vmp4all-api-config-volume
+        projected:
+          sources:
+          - configMap:
+              name: config-00-base
+          - configMap:
+              name: config-10-database
+          - configMap:
+              name: config-20-mail
+          - configMap:
+              name: config-30-data

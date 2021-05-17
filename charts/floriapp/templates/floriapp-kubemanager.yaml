@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: floriapp-kubemanager
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+  selector:
+    {{- include "floriapp.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: floriapp-kubemanager
+  type: ClusterIP
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: floriapp-kubemanager
+  labels:
+    {{- include "floriapp.labels" . | nindent 4 }}
+    app.kubernetes.io/component: floriapp-kubemanager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "floriapp.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: floriapp-kubemanager
+  template:
+    metadata:
+      labels:
+        {{- include "floriapp.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: floriapp-kubemanager
+    spec:
+      containers:
+      - name: floriapp-kubemanager
+        image: "{{ .Values.image.repository }}/floriapp-kubemanager:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 80
+          name: http
+        resources:
+          limits:
+            memory: 2Gi
+          requests:
+            memory: 256Mi
+        volumeMounts:
+        - name: floriapp-kubemanager-config-volume
+          mountPath: /app/config
+          readOnly: true
+      imagePullSecrets:
+      - name: acr-lakerfield
+      volumes:
+      - name: floriapp-kubemanager-config-volume
+        projected:
+          sources:
+          - configMap:
+              name: config-00-base
+          - configMap:
+              name: config-10-database
+          - configMap:
+              name: config-20-mail
+          - configMap:
+              name: config-30-data

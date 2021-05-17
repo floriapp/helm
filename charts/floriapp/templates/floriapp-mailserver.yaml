@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: floriapp-mailserver
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+  - name: smtp
+    port: 25
+    protocol: TCP
+  selector:
+    {{- include "floriapp.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: floriapp-mailserver
+  type: ClusterIP
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: floriapp-mailserver
+  labels:
+    {{- include "floriapp.labels" . | nindent 4 }}
+    app.kubernetes.io/component: floriapp-mailserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "floriapp.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: floriapp-mailserver
+  template:
+    metadata:
+      labels:
+        {{- include "floriapp.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: floriapp-mailserver
+    spec:
+      containers:
+      - name: floriapp-mailserver
+        image: "{{ .Values.image.repository }}/floriapp-mailserver:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 80
+          name: http
+        - containerPort: 25
+          name: smtp
+        resources:
+          limits:
+            memory: 2Gi
+          requests:
+            memory: 256Mi
+        volumeMounts:
+        - name: floriapp-mailserver-config-volume
+          mountPath: /app/config
+          readOnly: true
+      imagePullSecrets:
+      - name: acr-lakerfield
+      volumes:
+      - name: floriapp-mailserver-config-volume
+        projected:
+          sources:
+          - configMap:
+              name: config-00-base
+          - configMap:
+              name: config-10-database
+          - configMap:
+              name: config-20-mail
+          - configMap:
+              name: config-30-data

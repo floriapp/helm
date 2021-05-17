@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-00-base
+data:
+  00-base.ini: |
+    environment={{ .Values.config.environment }}
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-10-database
+data:
+  10-database.ini: |
+    [storage]
+    mode=ConnectionString
+    connectionstring={{ .Values.config.connectionstring }}
+    database={{ .Values.config.database }}
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-20-mail
+data:
+  20-mail.ini: |
+    [mail]
+    method={{ .Values.config.mailMethod }}
+
+    [mail:pickup]
+    directory={{ .Values.config.mailDirectory }}
+
+    [mail:smtp-server]
+    hostname={{ .Values.config.mailHostname }}
+    tcpport={{ .Values.config.mailTcpport }}
+    username={{ .Values.config.mailUsername }}
+    password={{ .Values.config.mailPassword }}
+
+    [mail:address]
+    from={{ .Values.config.mailFrom }}
+    fromname={{ .Values.config.mailFromname }}
+    from-allow-use-of-mailbox-address=true
+    bcc={{ .Values.config.mailBcc }}
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-30-data
+data:
+  30-data.ini: |
+    [data]
+    codering-url={{ .Values.config.coderingUrl }}
+    codering-username={{ .Values.config.coderingUsername }}
+    codering-password={{ .Values.config.coderingPassword }}
+    hosted-behind-proxy={{ .Values.config.hostedBehindProxy }}
+    known-proxies={{ .Values.config.knownProxies }}
+
+    [services]
+    etrade=true
+    maintenance-active=false
+    operation-processing=true
+    smtp-mailer=true
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-40-network
+data:
+  40-network.ini: |
+    [network:node]
+    auto-configure=true
+    auto-create=true
+    #hostname= #(default)
+    #domain=  #(default from proxy)
+    proxy-url={{ .Values.config.proxyUrl }}
+    proxy-key={{ .Values.config.proxyKey }}
+    
+---

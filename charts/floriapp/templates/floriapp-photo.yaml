@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: floriapp-photo
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+  selector:
+    {{- include "floriapp.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: floriapp-photo
+  type: ClusterIP
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: floriapp-photo
+  labels:
+    {{- include "floriapp.labels" . | nindent 4 }}
+    app.kubernetes.io/component: floriapp-photo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "floriapp.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: floriapp-photo
+  template:
+    metadata:
+      labels:
+        {{- include "floriapp.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: floriapp-photo
+    spec:
+      containers:
+      - name: floriapp-photo
+        image: "{{ .Values.image.repository }}/floriapp-photo:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 80
+          name: http
+        resources:
+          limits:
+            memory: 2Gi
+          requests:
+            memory: 256Mi
+      imagePullSecrets:
+      - name: acr-lakerfield
