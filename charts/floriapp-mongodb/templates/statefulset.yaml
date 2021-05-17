@@ -10,7 +10,7 @@ spec:
     matchLabels:
       {{- include "floriapp-mongodb.selectorLabels" . | nindent 6 }}
       app.kubernetes.io/component: mongodb
-  serviceName: db
+  serviceName: mongodb
   template:
     metadata:
       labels:
