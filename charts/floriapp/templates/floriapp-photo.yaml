@@ -44,6 +44,6 @@ spec:
           limits:
             memory: 2Gi
           requests:
-            memory: 256Mi
+            memory: 128Mi
       imagePullSecrets:
       - name: acr-lakerfield

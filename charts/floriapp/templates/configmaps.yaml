@@ -76,10 +76,26 @@ data:
   40-network.ini: |
     [network:node]
     auto-configure=true
-    auto-create=true
+    auto-create=false
+    configure-tls=false
     #hostname= #(default)
     #domain=  #(default from proxy)
-    proxy-url={{ .Values.config.proxyUrl }}
-    proxy-key={{ .Values.config.proxyKey }}
+    proxy-url={{ .Values.config.networkProxyUrl }}
+    proxy-key={{ .Values.config.networkProxyKey }}
+    
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-40-network-tls
+data:
+  40-network.ini: |
+    [network:node]
+    auto-configure=true
+    auto-create=true
+    configure-tls=true
+    #hostname= #(default)
+    #domain=  #(default from proxy)
+    proxy-url={{ .Values.config.networkProxyUrl }}
+    proxy-key={{ .Values.config.networkProxyKey }}
     
 ---

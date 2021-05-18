@@ -47,9 +47,9 @@ spec:
           name: https
         resources:
           limits:
-            memory: 4Gi
+            memory: 1Gi
           requests:
-            memory: 2Gi
+            memory: 128Mi
         volumeMounts:
         - name: vmp4all-web-config-volume
           mountPath: /app/config
@@ -68,3 +68,5 @@ spec:
               name: config-20-mail
           - configMap:
               name: config-30-data
+          - configMap:
+              name: config-40-network

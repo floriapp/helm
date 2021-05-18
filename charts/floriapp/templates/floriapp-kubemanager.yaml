@@ -42,9 +42,9 @@ spec:
           name: http
         resources:
           limits:
-            memory: 2Gi
+            memory: 512Mi
           requests:
-            memory: 256Mi
+            memory: 128Mi
         volumeMounts:
         - name: floriapp-kubemanager-config-volume
           mountPath: /app/config
@@ -63,3 +63,5 @@ spec:
               name: config-20-mail
           - configMap:
               name: config-30-data
+          - configMap:
+              name: config-40-network

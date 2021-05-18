@@ -69,3 +69,5 @@ spec:
               name: config-20-mail
           - configMap:
               name: config-30-data
+          - configMap:
+              name: config-40-network-tls
