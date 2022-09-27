@@ -22,7 +22,7 @@ metadata:
     {{- include "floriapp.labels" . | nindent 4 }}
     app.kubernetes.io/component: floriapp-kubemanager
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       {{- include "floriapp.selectorLabels" . | nindent 6 }}
@@ -62,6 +62,8 @@ spec:
           - configMap:
               name: config-20-mail
           - configMap:
-              name: config-30-data
+              name: config-30-data-floriapp
+          - configMap:
+              name: config-35-hosting
           - configMap:
               name: config-40-network

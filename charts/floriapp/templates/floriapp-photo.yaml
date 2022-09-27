@@ -11,6 +11,7 @@ spec:
     {{- include "floriapp.selectorLabels" . | nindent 4 }}
     app.kubernetes.io/component: floriapp-photo
   type: ClusterIP
+  clusterIP: "{{ .Values.config.app.floriapp.clusterIpPhoto }}"
 
 ---
 

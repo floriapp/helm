@@ -67,6 +67,8 @@ spec:
           - configMap:
               name: config-20-mail
           - configMap:
-              name: config-30-data
+              name: config-30-data-floriapp
+          - configMap:
+              name: config-35-hosting
           - configMap:
               name: config-40-network

@@ -47,7 +47,7 @@ spec:
               - configMap:
                   name: config-20-mail
               - configMap:
-                  name: config-30-data
+                  name: config-30-data-floriapp
   schedule: 0 17 * * MON-FRI
   successfulJobsHistoryLimit: 1
 

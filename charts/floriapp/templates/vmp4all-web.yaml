@@ -14,6 +14,7 @@ spec:
     {{- include "floriapp.selectorLabels" . | nindent 4 }}
     app.kubernetes.io/component: vmp4all-web
   type: ClusterIP
+  clusterIP: "{{ .Values.config.app.vmp4all.clusterIpWeb }}"
 
 ---
 
@@ -67,6 +68,8 @@ spec:
           - configMap:
               name: config-20-mail
           - configMap:
-              name: config-30-data
+              name: config-30-data-vmp4all
+          - configMap:
+              name: config-35-hosting
           - configMap:
               name: config-40-network

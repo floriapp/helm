@@ -50,7 +50,39 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: config-30-data
+  name: config-30-data-floriapp
+data:
+  30-data.ini: |
+    [data]
+    auction-transaction-direct-send-ekt={{ .Values.config.auctionTransactionDirectSendEkt }}
+    auction-transaction-direct-place-order={{ .Values.config.auctionTransactionDirectPlaceOrder }}
+    codering-url={{ .Values.config.coderingUrl }}
+    codering-username={{ .Values.config.coderingUsername }}
+    codering-password={{ .Values.config.coderingPassword }}
+    hosted-behind-proxy={{ .Values.config.hostedBehindProxy }}
+    kosmos-url={{ .Values.config.kosmosUrl }}
+    kosmos-username={{ .Values.config.kosmosUsername }}
+    kosmos-password={{ .Values.config.kosmosPassword }}
+    kosmos-auction-cluster-id={{ .Values.config.kosmosAuctionClusterId }}
+    kosmos-new-user-mail={{ .Values.config.kosmosNewUserMail }}
+    known-proxies={{ .Values.config.knownProxies }}
+    photo-thumb-url={{ .Values.config.app.floriapp.photoThumbUrl }}
+    vmp-agent={{ .Values.config.app.floriapp.agent }}
+    vmp-hostname-suffix={{ .Values.config.app.floriapp.hostnameSuffix }}
+    vmp-hostname-for-gln={{ .Values.config.app.floriapp.hostnameForGln }}
+
+    [services]
+    etrade=true
+    maintenance-active=false
+    operation-processing=true
+    smtp-mailer=true
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-30-data-vmp4all
 data:
   30-data.ini: |
     [data]
@@ -59,6 +91,10 @@ data:
     codering-password={{ .Values.config.coderingPassword }}
     hosted-behind-proxy={{ .Values.config.hostedBehindProxy }}
     known-proxies={{ .Values.config.knownProxies }}
+    photo-thumb-url={{ .Values.config.app.vmp4all.photoThumbUrl }}
+    vmp-agent={{ .Values.config.app.vmp4all.agent }}
+    vmp-hostname-suffix={{ .Values.config.app.vmp4all.hostnameSuffix }}
+    vmp-hostname-for-gln={{ .Values.config.app.vmp4all.hostnameForGln }}
 
     [services]
     etrade=true
@@ -66,6 +102,19 @@ data:
     operation-processing=true
     smtp-mailer=true
 
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-35-hosting
+data:
+  35-hosting.ini: |
+    [hosting]
+    hosted-behind-proxy={{ .Values.config.hostedBehindProxy }}
+    known-networks={{ .Values.config.knownNetworks }}
+    known-proxies={{ .Values.config.knownProxies }}
+    
 ---
 
 apiVersion: v1
@@ -83,6 +132,8 @@ data:
     proxy-url={{ .Values.config.networkProxyUrl }}
     proxy-key={{ .Values.config.networkProxyKey }}
     
+---
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
