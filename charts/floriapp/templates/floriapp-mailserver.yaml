@@ -25,7 +25,7 @@ metadata:
     {{- include "floriapp.labels" . | nindent 4 }}
     app.kubernetes.io/component: floriapp-mailserver
 spec:
-  replicas: 1
+  replicas: {{ .Values.config.replicas.floriappMail }}
   selector:
     matchLabels:
       {{- include "floriapp.selectorLabels" . | nindent 6 }}

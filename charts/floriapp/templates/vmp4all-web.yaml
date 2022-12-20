@@ -26,7 +26,7 @@ metadata:
     {{- include "floriapp.labels" . | nindent 4 }}
     app.kubernetes.io/component: vmp4all-web
 spec:
-  replicas: 1
+  replicas: {{ .Values.config.replicas.vmp4allWeb }}
   selector:
     matchLabels:
       {{- include "floriapp.selectorLabels" . | nindent 6 }}

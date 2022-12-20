@@ -26,7 +26,7 @@ metadata:
     {{- include "floriapp.labels" . | nindent 4 }}
     app.kubernetes.io/component: floriapp-web
 spec:
-  replicas: 0
+  replicas: {{ .Values.config.replicas.floriappWeb }}
   selector:
     matchLabels:
       {{- include "floriapp.selectorLabels" . | nindent 6 }}

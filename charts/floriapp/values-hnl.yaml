@@ -26,6 +26,16 @@ config:
   networkProxyUrl: "https://proxy1.lakerfield.net"
   networkProxyKey: "..."
 
+  replicas:
+    floriappApi: "1"
+    floriappMail: "1"
+    floriappPhoto: "1"
+    floriappServer: "1"
+    floriappWeb: "1"
+    vmp4allApi: "0"
+    vmp4allServer: "0"
+    vmp4allWeb: "0"
+
   app:
     floriapp:
       agent: "CotradrAalsmeer"
