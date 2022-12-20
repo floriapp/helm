@@ -1,0 +1,50 @@
+
+config:
+  environment: "dev"
+  
+  connectionstring: "mongodb://mongo-0.mongodb.test-hortinl.svc.cluster.local:27017"
+  database: "testhortinl"
+
+  mailMethod: "Smtp"
+  mailDirectory: "/app/pickup"
+  mailHostname: "mail.lakerfield.net"
+  mailTcpport: "25"
+  mailUsername: "floriapp@lakerfield.net"
+  mailPassword: "..."
+  mailFrom: "noreply@testhortinl.net"
+  mailFromname: "HortiNL (test)"
+  mailBcc: "archive@floriapp.nl"
+
+  coderingUrl: "http://deel.ml/code"
+  coderingUsername: "michael"
+  coderingPassword: "..."
+  hostedBehindProxy: "true"
+  knownNetworks: "10.22.0.0/16"
+  knownProxies: "10.22.0.0"
+  initialNetworkUrl: "https://10.23.247.96/"
+
+  networkProxyUrl: "https://proxy2.lakerfield.net"
+  networkProxyKey: "..."
+
+  app:
+    floriapp:
+      agent: "CotradrAalsmeer"
+      hostnameSuffix: ""
+      hostnameForGln: "testhortinl.net"
+#      photoThumbUrl: "https://photo.testhortinl.app/"
+      photoThumbUrl: "https://photo.testflori.app/"
+      clusterIpApi: "10.23.50.11"
+      clusterIpPhoto: "10.23.50.201"
+      clusterIpWeb: "10.23.50.1"
+
+    vmp4all:
+      agent: "CotradrAalsmeer"
+      hostnameSuffix: ""
+      hostnameForGln: "testhortinl.net"
+#      photoThumbUrl: "https://photo.testhortinl.app/"
+      photoThumbUrl: "https://photo.testflori.app/"
+      clusterIpApi: "10.23.50.111"
+      clusterIpWeb: "10.23.50.101"
+
+
+

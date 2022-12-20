@@ -1,0 +1,53 @@
+
+config:
+  environment: "test"
+  
+  connectionstring: "mongodb://mongo-0.mongodb:27017"
+  database: "floridev"
+
+  mailMethod: "Smtp"
+  mailDirectory: "/app/pickup"
+  mailHostname: "mail.lakerfield.net"
+  mailTcpport: "25"
+  mailUsername: "floriapp@lakerfield.net"
+  mailPassword: "..."
+  mailFrom: "noreply@floriapp.nl"
+  mailFromname: "flori.app (dev)"
+  mailBcc: "archive@floriapp.nl"
+
+  auctionTransactionDirectSendEkt: "false"
+  auctionTransactionDirectPlaceOrder: "false"
+  coderingUrl: "http://deel.ml/code"
+  coderingUsername: "michael"
+  coderingPassword: "..."
+  kosmosUrl: "https://kosmos-test.aucxis.com/adminapi/api/v1/"
+  kosmosUsername: "beheer@hortinl.com"
+  kosmosPassword: "..."
+  kosmosAuctionClusterId: "14"
+  kosmosNewUserMail: "michael@lakerveld.eu"
+  hostedBehindProxy: "true"
+  knownNetworks: "10.14.0.0/16"
+  knownProxies: "10.14.0.0"
+
+  networkProxyUrl: "https://proxy2.lakerfield.net"
+  networkProxyKey: "..."
+
+  app:
+    floriapp:
+      agent: "CotradrAalsmeer"
+      hostnameSuffix: ""
+      hostnameForGln: "flori-api.vmp4test.net"
+      photoThumbUrl: "https://flori-photo.vmp4test.net/"
+      clusterIpApi: "10.15.20.11"
+      clusterIpPhoto: "10.15.20.201"
+      clusterIpWeb: "10.15.20.1"
+
+    vmp4all:
+      agent: "CotradrAalsmeer"
+      hostnameSuffix: ""
+      hostnameForGln: "vmp-api.vmp4test.net"
+      photoThumbUrl: "https://flori-photo.vmp4test.net/"
+      clusterIpApi: "10.15.20.111"
+      clusterIpWeb: "10.15.20.101"
+
+

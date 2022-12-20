@@ -46,9 +46,26 @@ config:
   coderingUsername: ""
   coderingPassword: ""
   hostedBehindProxy: "true"
+  knownNetworks: "10.42.0.0/16"
   knownProxies: "10.42.0.0"
 
   networkProxyUrl: "https://proxy.unknown.local"
   networkProxyKey: ""
 
+  app:
+    floriapp:
+      agent: "CotradrAalsmeer"
+      hostnameSuffix: ""
+      hostnameForGln: "flori-api.vmp4test.net"
+      photoThumbUrl: "https://flori-photo.vmp4test.net/"
+      clusterIpApi: ""
+      clusterIpPhoto: ""
+      clusterIpWeb: ""
 
+    vmp4all:
+      agent: "CotradrAalsmeer"
+      hostnameSuffix: ""
+      hostnameForGln: "vmp-api.vmp4test.net"
+      photoThumbUrl: "https://flori-photo.vmp4test.net/"
+      clusterIpApi: ""
+      clusterIpWeb: ""

@@ -1,0 +1,54 @@
+
+config:
+  environment: "live"
+  
+  connectionstring: "mongodb://mongo-0.mongodb.onlineflowerauction.svc.cluster.local:27017"
+  database: "floriapp"
+
+  mailMethod: "Smtp"
+  mailDirectory: "/app/pickup"
+  mailHostname: "mail.lakerfield.net"
+  mailTcpport: "25"
+  mailUsername: "floriapp@lakerfield.net"
+  mailPassword: "..."
+  mailFrom: "noreply@hortinl.net"
+  mailFromname: "HortiNL"
+  mailBcc: "archive@floriapp.nl"
+
+  auctionTransactionDirectSendEkt: "true"
+  auctionTransactionDirectPlaceOrder: "false"
+  coderingUrl: "http://deel.ml/code"
+  coderingUsername: "michael"
+  coderingPassword: "..."
+  kosmosUrl: "https://www.onlineflower.auction/adminapi/api/v1/"
+  kosmosUsername: "beheer@hortinl.com"
+  kosmosPassword: "..."
+  kosmosAuctionClusterId: "3"
+  kosmosNewUserMail: "kosmos@onlineflowerauction.com"
+  hostedBehindProxy: "true"
+  knownNetworks: "10.22.0.0/16"
+  knownProxies: "10.22.0.0"
+
+  networkProxyUrl: "https://proxy1.lakerfield.net"
+  networkProxyKey: "..."
+
+  app:
+    floriapp:
+      agent: "CotradrAalsmeer"
+      hostnameSuffix: ""
+      hostnameForGln: "vmp.onlineflowerauction.app"
+      photoThumbUrl: "https://photo.onlineflowerauction.app/"
+      clusterIpApi: "10.23.30.11"
+      clusterIpPhoto: "10.23.30.201"
+      clusterIpWeb: "10.23.30.1"
+
+    vmp4all:
+      agent: "CotradrAalsmeer"
+      hostnameSuffix: ""
+      hostnameForGln: "vmp.onlineflowerauction.app"
+      photoThumbUrl: "https://photo.onlineflowerauction.app/"
+      clusterIpApi: "10.23.30.111"
+      clusterIpWeb: "10.23.30.101"
+
+
+

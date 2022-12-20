@@ -1,0 +1,47 @@
+
+config:
+  environment: "live"
+  
+  connectionstring: "mongodb://mongo-0.mongodb.floriapp.svc.cluster.local:27017"
+  database: "floriapp"
+
+  mailMethod: "Smtp"
+  mailDirectory: "/app/pickup"
+  mailHostname: "mail.lakerfield.net"
+  mailTcpport: "25"
+  mailUsername: "floriapp@lakerfield.net"
+  mailPassword: "..."
+  mailFrom: "noreply@floriapp.nl"
+  mailFromname: "flori.app"
+  mailBcc: "archive@floriapp.nl"
+
+  coderingUrl: "http://deel.ml/code"
+  coderingUsername: "michael"
+  coderingPassword: "..."
+  hostedBehindProxy: "true"
+  knownNetworks: "10.22.0.0/16"
+  knownProxies: "10.22.0.0"
+
+  networkProxyUrl: "https://proxy1.lakerfield.net"
+  networkProxyKey: "..."
+
+  app:
+    floriapp:
+      agent: "CotradrAalsmeer"
+      hostnameSuffix: ""
+      hostnameForGln: "vmp.flori.app"
+      photoThumbUrl: "https://photo.flori.app/"
+      clusterIpApi: "10.23.10.11"
+      clusterIpPhoto: "10.23.10.201"
+      clusterIpWeb: "10.23.10.1"
+
+    vmp4all:
+      agent: "CotradrAalsmeer"
+      hostnameSuffix: ""
+      hostnameForGln: "vmp.vmp4all.net"
+      photoThumbUrl: "https://photo.flori.app/"
+      clusterIpApi: "10.23.10.111"
+      clusterIpWeb: "10.23.10.101"
+
+
+
