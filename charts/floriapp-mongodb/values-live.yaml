@@ -1,0 +1,29 @@
+# Default values for floriapp-mongodb.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 3
+
+image:
+  repository: mongo
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 27017
+
+storage:
+  className: "floriapp-local-storage"
+  size: "8Gi"
+
+resources:
+  requests:
+    memory: 512Mi
+  limits:
+    memory: 2Gi

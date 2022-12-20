@@ -3,7 +3,7 @@
   #start a shell session
   mongo
   rs.status()
-  rs.initialize()
+  rs.initiate()
   rs.status()
   show dbs
 
