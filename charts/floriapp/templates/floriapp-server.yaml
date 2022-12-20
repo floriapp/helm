@@ -73,3 +73,5 @@ spec:
               name: config-35-hosting
           - configMap:
               name: config-40-network-tls
+          - configMap:
+              name: config-45-network-server

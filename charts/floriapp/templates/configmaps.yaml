@@ -67,6 +67,7 @@ data:
     kosmos-new-user-mail={{ .Values.config.kosmosNewUserMail }}
     known-proxies={{ .Values.config.knownProxies }}
     photo-thumb-url={{ .Values.config.app.floriapp.photoThumbUrl }}
+    initial-network-url={{ .Values.config.initialNetworkUrl }}
     vmp-agent={{ .Values.config.app.floriapp.agent }}
     vmp-hostname-suffix={{ .Values.config.app.floriapp.hostnameSuffix }}
     vmp-hostname-for-gln={{ .Values.config.app.floriapp.hostnameForGln }}
@@ -150,3 +151,15 @@ data:
     proxy-key={{ .Values.config.networkProxyKey }}
     
 ---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-45-network-server
+data:
+  50-network-server.ini: |
+    [network:server]
+    enabled=true
+    
+---
+
