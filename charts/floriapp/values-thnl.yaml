@@ -39,7 +39,6 @@ config:
   app:
     floriapp:
       agent: "CotradrAalsmeer"
-      hostnameSuffix: ""
       hostnameForGln: "testhortinl.net"
 #      photoThumbUrl: "https://photo.testhortinl.app/"
       photoThumbUrl: "https://photo.testflori.app/"
@@ -49,7 +48,6 @@ config:
 
     vmp4all:
       agent: "CotradrAalsmeer"
-      hostnameSuffix: ""
       hostnameForGln: "testhortinl.net"
 #      photoThumbUrl: "https://photo.testhortinl.app/"
       photoThumbUrl: "https://photo.testflori.app/"

@@ -69,7 +69,6 @@ data:
     photo-thumb-url={{ .Values.config.app.floriapp.photoThumbUrl }}
     initial-network-url={{ .Values.config.initialNetworkUrl }}
     vmp-agent={{ .Values.config.app.floriapp.agent }}
-    vmp-hostname-suffix={{ .Values.config.app.floriapp.hostnameSuffix }}
     vmp-hostname-for-gln={{ .Values.config.app.floriapp.hostnameForGln }}
 
     [services]
@@ -94,7 +93,6 @@ data:
     known-proxies={{ .Values.config.knownProxies }}
     photo-thumb-url={{ .Values.config.app.vmp4all.photoThumbUrl }}
     vmp-agent={{ .Values.config.app.vmp4all.agent }}
-    vmp-hostname-suffix={{ .Values.config.app.vmp4all.hostnameSuffix }}
     vmp-hostname-for-gln={{ .Values.config.app.vmp4all.hostnameForGln }}
 
     [services]

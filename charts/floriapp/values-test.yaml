@@ -38,7 +38,6 @@ config:
   app:
     floriapp:
       agent: "CotradrAalsmeer"
-      hostnameSuffix: ""
       hostnameForGln: "vmp.testflori.app"
       photoThumbUrl: "https://photo.testflori.app/"
       clusterIpApi: "10.23.20.11"
@@ -47,7 +46,6 @@ config:
 
     vmp4all:
       agent: "CotradrAalsmeer"
-      hostnameSuffix: ""
       hostnameForGln: "vmp.testflori.app"
       photoThumbUrl: "https://photo.testflori.app/"
       clusterIpApi: "10.23.20.111"
