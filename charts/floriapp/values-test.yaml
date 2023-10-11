@@ -2,7 +2,7 @@
 config:
   environment: "test"
   
-  connectionstring: "mongodb://mongo-0.mongodb.floritest.svc.cluster.local:27017"
+  connectionstring: "mongodb://mongo-0.mongodb.floritest.svc.cluster.local:27017?replicaSet=rs0"
   database: "floriapp"
 
   mailMethod: "Smtp"

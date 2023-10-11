@@ -39,6 +39,8 @@ config:
   app:
     floriapp:
       agent: "CotradrAalsmeer"
+      domainNameApi: "testhortinl.net"
+      domainNameWeb: "testhortinl.app"
       hostnameForGln: "testhortinl.net"
 #      photoThumbUrl: "https://photo.testhortinl.app/"
       photoThumbUrl: "https://photo.testflori.app/"
