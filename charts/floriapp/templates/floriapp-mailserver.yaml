@@ -47,9 +47,9 @@ spec:
           name: smtp
         resources:
           limits:
-            memory: 512Mi
+            memory: {{ .Values.config.memoryLimits.floriappMail }}
           requests:
-            memory: 128Mi
+            memory: {{ .Values.config.memoryRequests.floriappMail }}
         volumeMounts:
         - name: floriapp-mailserver-config-volume
           mountPath: /app/config

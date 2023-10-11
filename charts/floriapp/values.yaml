@@ -52,6 +52,30 @@ config:
   networkProxyUrl: "https://proxy.unknown.local"
   networkProxyKey: ""
 
+  replicas:
+    floriappApi: "1"
+    floriappMail: "0"
+    floriappPhoto: "1"
+    floriappServer: "1"
+    floriappWeb: "1"
+    vmp4allApi: "0"
+    vmp4allServer: "0"
+    vmp4allWeb: "0"
+
+  memoryRequests:
+    floriappApi: "1Gi"
+    floriappMail: "128Mi"
+    floriappPhoto: "128Mi"
+    floriappServer: "1Gi"
+    floriappWeb: "128Mi"
+
+  memoryLimits:
+    floriappApi: "4Gi"
+    floriappMail: "512Mi"
+    floriappPhoto: "2Gi"
+    floriappServer: "4Gi"
+    floriappWeb: "1Gi"
+
   app:
     floriapp:
       agent: "CotradrAalsmeer"

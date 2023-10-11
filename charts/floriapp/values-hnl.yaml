@@ -36,6 +36,20 @@ config:
     vmp4allServer: "0"
     vmp4allWeb: "0"
 
+  memoryRequests:
+    floriappApi: "8Gi"
+    floriappMail: "128Mi"
+    floriappPhoto: "128Mi"
+    floriappServer: "2Gi"
+    floriappWeb: "128Mi"
+
+  memoryLimits:
+    floriappApi: "16Gi"
+    floriappMail: "512Mi"
+    floriappPhoto: "2Gi"
+    floriappServer: "8Gi"
+    floriappWeb: "1Gi"
+
   app:
     floriapp:
       agent: "CotradrAalsmeer"

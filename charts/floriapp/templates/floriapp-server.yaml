@@ -48,9 +48,9 @@ spec:
           name: https
         resources:
           limits:
-            memory: 4Gi
+            memory: {{ .Values.config.memoryLimits.floriappServer }}
           requests:
-            memory: 512Mi
+            memory: {{ .Values.config.memoryRequests.floriappServer }}
         volumeMounts:
         - name: floriapp-server-config-volume
           mountPath: /app/config

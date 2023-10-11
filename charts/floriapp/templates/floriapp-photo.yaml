@@ -43,8 +43,8 @@ spec:
           name: http
         resources:
           limits:
-            memory: 2Gi
+            memory: {{ .Values.config.memoryLimits.floriappPhoto }}
           requests:
-            memory: 128Mi
+            memory: {{ .Values.config.memoryRequests.floriappPhoto }}
       imagePullSecrets:
       - name: acr-lakerfield
