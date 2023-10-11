@@ -3,9 +3,9 @@ entries:
   floriapp:
   - apiVersion: v2
     appVersion: "487"
-    created: "2023-10-11T13:00:30.459348644Z"
+    created: "2023-10-11T15:20:57.238459666Z"
     description: Install a flori.app environment
-    digest: 4981e123c910343a53d0afaa29456804c0f83db9acdedce874bd5f4dedb48425
+    digest: 8f8e7921c26ee57fc14343a24695c35af1db23065b798db4425e298301fc0fd2
     icon: https://raw.githubusercontent.com/floriapp/helm/main/floriapp-logo.png
     name: floriapp
     type: application
@@ -26,10 +26,10 @@ entries:
   floriapp-mongodb:
   - apiVersion: v2
     appVersion: 4.4.6
-    created: "2023-10-11T13:00:30.459975547Z"
+    created: "2023-10-11T15:20:57.239079567Z"
     description: Install Mongodb configured as a statefulset for use with a flori.app
       application in kubernetes
-    digest: 58b074ece08f53d2b650ea2d963d2876bb46b62968e021699f71c03e462ebec5
+    digest: 1188cd4ebda872ec08edd03c412583c08e3511c55e27c19553357ff956573833
     name: floriapp-mongodb
     type: application
     urls:
@@ -115,12 +115,12 @@ entries:
   floritest:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-10-11T13:00:30.46086705Z"
+    created: "2023-10-11T15:20:57.239629168Z"
     description: A Helm chart for Kubernetes
-    digest: 3a553d9ade45b9982cbf066a010b8a5833b28b88b4f5852e2f8024c2077f878b
+    digest: 6d687ec3d4dac44e459866e2cc5414b87f4b98088081be073039aff128bf35b9
     name: floritest
     type: application
     urls:
     - https://floriapp.github.io/helm/floritest-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-11T13:00:30.457777539Z"
+generated: "2023-10-11T15:20:57.235831062Z"
