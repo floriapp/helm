@@ -31,9 +31,6 @@ config:
     floriappPhoto: "1"
     floriappServer: "0"
     floriappWeb: "0"
-    vmp4allApi: "0"
-    vmp4allServer: "0"
-    vmp4allWeb: "1"
 
   memoryRequests:
     floriappApi: "1Gi"
