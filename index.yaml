@@ -2,6 +2,17 @@ apiVersion: v1
 entries:
   floriapp:
   - apiVersion: v2
+    appVersion: "487"
+    created: "2023-10-11T13:00:30.459348644Z"
+    description: Install a flori.app environment
+    digest: 4981e123c910343a53d0afaa29456804c0f83db9acdedce874bd5f4dedb48425
+    icon: https://raw.githubusercontent.com/floriapp/helm/main/floriapp-logo.png
+    name: floriapp
+    type: application
+    urls:
+    - https://floriapp.github.io/helm/floriapp-0.9.2-beta487a.tgz
+    version: 0.9.2-beta487a
+  - apiVersion: v2
     appVersion: "243"
     created: "2021-05-17T17:20:15.746116986Z"
     description: Install a flori.app environment
@@ -13,6 +24,17 @@ entries:
     - https://github.com/floriapp/helm/releases/download/floriapp-0.9.0-beta01/floriapp-0.9.0-beta01.tgz
     version: 0.9.0-beta01
   floriapp-mongodb:
+  - apiVersion: v2
+    appVersion: 4.4.6
+    created: "2023-10-11T13:00:30.459975547Z"
+    description: Install Mongodb configured as a statefulset for use with a flori.app
+      application in kubernetes
+    digest: 58b074ece08f53d2b650ea2d963d2876bb46b62968e021699f71c03e462ebec5
+    name: floriapp-mongodb
+    type: application
+    urls:
+    - https://floriapp.github.io/helm/floriapp-mongodb-1.0.0.tgz
+    version: 1.0.0
   - apiVersion: v2
     appVersion: 4.4.6
     created: "2021-05-17T21:11:39.692921099Z"
@@ -93,12 +115,12 @@ entries:
   floritest:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-11T15:31:53.542113162Z"
+    created: "2023-10-11T13:00:30.46086705Z"
     description: A Helm chart for Kubernetes
-    digest: 20dd591fb3e6bc052cef29efa33dbf975f30f7110ea8310c5ffbf347faa23759
+    digest: 3a553d9ade45b9982cbf066a010b8a5833b28b88b4f5852e2f8024c2077f878b
     name: floritest
     type: application
     urls:
-    - https://github.com/floriapp/helm/releases/download/floritest-0.1.0/floritest-0.1.0.tgz
+    - https://floriapp.github.io/helm/floritest-0.1.0.tgz
     version: 0.1.0
-generated: "2021-05-17T21:11:39.692968595Z"
+generated: "2023-10-11T13:00:30.457777539Z"
