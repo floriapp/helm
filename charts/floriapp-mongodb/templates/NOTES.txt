@@ -12,7 +12,34 @@
   #start a shell session
   mongo
   rs.status()
-  rs.add("mongo-99:27017")
+
+  # rename node to full name
+  var cfg = rs.conf();
+  cfg.members[0].host = "mongo-0.mongodb.hortinl.svc.cluster.local:27017"
+  rs.reconfig(cfg)
+
   rs.status()
+
+  # add other nodes without votes
+  rs.add({host: "mongo-1.mongodb.hortinl.svc.cluster.local:27017", priority: 0, votes:0})
+  rs.add({host: "mongo-2.mongodb.hortinl.svc.cluster.local:27017", priority: 0, votes:0})
+
+  rs.status()
+
+  # after data synced (node is has state secundary), update the votes
+  var cfg = rs.conf();
+  cfg.members[0].priority = 2
+  cfg.members[1].priority = 1
+  cfg.members[1].votes = 1
+  cfg.members[2].priority = 1
+  cfg.members[2].votes = 1
+  rs.reconfig(cfg)
+
+  rs.status()
+
+3. In case of an configuration error, force the config on node
+
+  rs.reconfig(cfg, {force : true})
+
   #https://docs.mongodb.com/manual/reference/method/rs.add/
 
