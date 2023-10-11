@@ -28,19 +28,20 @@ config:
   hostedBehindProxy: "true"
   knownNetworks: "10.14.0.0/16"
   knownProxies: "10.14.0.0"
+  initialNetworkUrl: "https://10.15.126.29/"
 
   networkProxyUrl: "https://proxy2.lakerfield.net"
   networkProxyKey: "..."
 
   replicas:
     floriappApi: "1"
-    floriappMail: "1"
+    floriappMail: "0"
     floriappPhoto: "1"
     floriappServer: "1"
-    floriappWeb: "0"
+    floriappWeb: "1"
     vmp4allApi: "0"
     vmp4allServer: "0"
-    vmp4allWeb: "1"
+    vmp4allWeb: "0"
 
   app:
     floriapp:

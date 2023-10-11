@@ -59,6 +59,8 @@ data:
     codering-url={{ .Values.config.coderingUrl }}
     codering-username={{ .Values.config.coderingUsername }}
     codering-password={{ .Values.config.coderingPassword }}
+    domain-name-api={{ .Values.config.app.floriapp.domainNameApi }}
+    domain-name-web={{ .Values.config.app.floriapp.domainNameWeb }}
     hosted-behind-proxy={{ .Values.config.hostedBehindProxy }}
     kosmos-url={{ .Values.config.kosmosUrl }}
     kosmos-username={{ .Values.config.kosmosUsername }}

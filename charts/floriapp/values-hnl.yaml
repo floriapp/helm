@@ -3,7 +3,7 @@ config:
   environment: "live"
   
   connectionstring: "mongodb://mongo-0.mongodb.hortinl.svc.cluster.local:27017"
-  database: "hortinl"
+  database: "HortiNL"
 
   mailMethod: "Smtp"
   mailDirectory: "/app/pickup"
@@ -21,15 +21,15 @@ config:
   hostedBehindProxy: "true"
   knownNetworks: "10.22.0.0/16"
   knownProxies: "10.22.0.0"
-  initialNetworkUrl: "https://10.23.247.96/"
+  initialNetworkUrl: "https://10.23.196.125/"
 
   networkProxyUrl: "https://proxy1.lakerfield.net"
   networkProxyKey: "..."
 
   replicas:
     floriappApi: "1"
-    floriappMail: "1"
-    floriappPhoto: "1"
+    floriappMail: "0"
+    floriappPhoto: "0"
     floriappServer: "1"
     floriappWeb: "1"
     vmp4allApi: "0"
@@ -39,6 +39,8 @@ config:
   app:
     floriapp:
       agent: "CotradrAalsmeer"
+      domainNameApi: "hortinl.net"
+      domainNameWeb: "hortinl.app"
       hostnameForGln: "vmp.flori.app"
 #      hostnameForGln: "hortinl.net"
       photoThumbUrl: "https://photo.flori.app/"
