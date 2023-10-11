@@ -24,7 +24,7 @@ questions:
 
 # Storage
 - variable: storage.className
-  default: "my-floriapp-local-storage"
+  default: "my-local-storage"
   description: "Specify Storage Class Name to use"
   type: string
   label: "Storage Class Name"
