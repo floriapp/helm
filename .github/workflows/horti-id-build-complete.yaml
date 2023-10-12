@@ -1,0 +1,12 @@
+name: Horti-ID build completed
+on:
+  repository_dispatch:
+    types: [horti-id-build-event]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    # other steps
