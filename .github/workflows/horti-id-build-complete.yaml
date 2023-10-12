@@ -20,4 +20,12 @@ jobs:
         git config user.name "Michael Lakerveld"
         git add .
         git commit -m "Update horti-id chart to version ${{ github.event.client_payload.build }}"
-        git push https://${{secrets.PAT_FOR_COMMIT_TRIGGER}}@github.com/floriapp/helm.git HEAD:main
+        git push
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish Helm charts
+        uses: stefanprodan/helm-gh-pages@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
