@@ -19,5 +19,5 @@ jobs:
         git config user.email "lakerfield@gmail.com"
         git config user.name "Michael Lakerveld"
         git add .
-        git commit -m "Update from Workflow"
+        git commit -m "Update horti-id chart to version ${{ github.event.client_payload.build }}"
         git push
