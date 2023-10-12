@@ -10,3 +10,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     # other steps
+    - name: Edit chart version
+      run: |
+        sed -i '19s/.*/version: 1.467.1/' charts/horti-id/Chart.yaml
+    - name: git commit
+      run: |
+        git add .
+        git commit -m "Update from Workflow"
+        git push
