@@ -1,0 +1,110 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-00-base
+data:
+  00-base.ini: |
+    environment={{ .Values.config.environment }}
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-10-database
+data:
+  10-database.ini: |
+    [storage]
+    mode=ConnectionString
+    connectionstring={{ .Values.config.connectionstring }}
+    database={{ .Values.config.database }}
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-20-mail
+data:
+  20-mail.ini: |
+    [mail]
+    method={{ .Values.config.mailMethod }}
+
+    [mail:pickup]
+    directory={{ .Values.config.mailDirectory }}
+
+    [mail:smtp-server]
+    hostname={{ .Values.config.mailHostname }}
+    tcpport={{ .Values.config.mailTcpport }}
+    username={{ .Values.config.mailUsername }}
+    password={{ .Values.config.mailPassword }}
+
+    [mail:address]
+    from={{ .Values.config.mailFrom }}
+    fromname={{ .Values.config.mailFromname }}
+    from-allow-use-of-mailbox-address=true
+    bcc={{ .Values.config.mailBcc }}
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-30-data
+data:
+  30-data.ini: |
+    [data]
+    codering-url={{ .Values.config.coderingUrl }}
+    codering-username={{ .Values.config.coderingUsername }}
+    codering-password={{ .Values.config.coderingPassword }}
+    domain-name-api={{ .Values.config.app.floriapp.domainNameApi }}
+    domain-name-web={{ .Values.config.app.floriapp.domainNameWeb }}
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-35-hosting
+data:
+  35-hosting.ini: |
+    [hosting]
+    hosted-behind-proxy={{ .Values.config.hostedBehindProxy }}
+    known-networks={{ .Values.config.knownNetworks }}
+    known-proxies={{ .Values.config.knownProxies }}
+    
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-40-network
+data:
+  40-network.ini: |
+    [network:node]
+    auto-configure=false
+    auto-create=false
+    configure-tls=false
+    #hostname= #(default)
+    #domain=  #(default from proxy)
+    proxy-url={{ .Values.config.networkProxyUrl }}
+    proxy-key={{ .Values.config.networkProxyKey }}
+    
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-40-network-tls
+data:
+  40-network.ini: |
+    [network:node]
+    auto-configure=false
+    auto-create=true
+    configure-tls=true
+    #hostname= #(default)
+    #domain=  #(default from proxy)
+    proxy-url={{ .Values.config.networkProxyUrl }}
+    proxy-key={{ .Values.config.networkProxyKey }}
+    
+---

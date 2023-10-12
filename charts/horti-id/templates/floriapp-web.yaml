@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: horti-id-web
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+  selector:
+    {{- include "floriapp.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: horti-id-web
+  type: ClusterIP
+  clusterIP: "{{ .Values.config.app.floriapp.clusterIpWeb }}"
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: horti-id-web
+  labels:
+    {{- include "floriapp.labels" . | nindent 4 }}
+    app.kubernetes.io/component: horti-id-web
+spec:
+  replicas: {{ .Values.config.replicas.hortiIdWeb }}
+  selector:
+    matchLabels:
+      {{- include "floriapp.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: horti-id-web
+  template:
+    metadata:
+      labels:
+        {{- include "floriapp.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: horti-id-web
+    spec:
+      containers:
+      - name: horti-id-web
+        image: "{{ .Values.image.repository }}/horti-id-web:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 80
+          name: http
+        resources:
+          limits:
+            memory: {{ .Values.config.memoryLimits.hortiIdWeb }}
+          requests:
+            memory: {{ .Values.config.memoryRequests.hortiIdWeb }}
+        volumeMounts:
+        - name: horti-id-web-config-volume
+          mountPath: /app/config
+          readOnly: true
+      imagePullSecrets:
+      - name: acr-lakerfield
+      volumes:
+      - name: horti-id-web-config-volume
+        projected:
+          sources:
+          - configMap:
+              name: config-00-base
+          - configMap:
+              name: config-10-database
+          - configMap:
+              name: config-20-mail
+          - configMap:
+              name: config-30-data
+          - configMap:
+              name: config-35-hosting
+          - configMap:
+              name: config-40-network

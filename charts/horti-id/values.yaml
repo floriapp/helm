@@ -1,0 +1,76 @@
+# Default values for floriapp.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  repository: lakerfield.azurecr.io
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+config:
+  environment: "test"
+  
+  connectionstring: "mongodb://mongo-0.mongodb:27017"
+  database: "horti-id-default"
+
+  mailMethod: "Smtp"
+  mailDirectory: "/app/pickup"
+  mailHostname: "mail.unknown.local"
+  mailTcpport: "25"
+  mailUsername: ""
+  mailPassword: ""
+  mailFrom: "noreply@unknown.local"
+  mailFromname: "unknown"
+  mailBcc: "archive@unknown.local"
+
+  coderingUrl: "http://deel.ml/code"
+  coderingUsername: ""
+  coderingPassword: ""
+  hostedBehindProxy: "true"
+  knownNetworks: "10.42.0.0/16"
+  knownProxies: "10.42.0.0"
+  initialNetworkUrl: ""
+
+  networkProxyUrl: "https://proxy.unknown.local"
+  networkProxyKey: ""
+
+  replicas:
+    hortiIdWeb: "1"
+
+  memoryRequests:
+    hortiIdWeb: "1Gi"
+
+  memoryLimits:
+    hortiIdWeb: "4Gi"
+
+  app:
+    floriapp:
+      agent: "CotradrAalsmeer"
+      domainNameApi: ""
+      domainNameWeb: ""
+      hostnameSuffix: ""
+      hostnameForGln: "flori-api.vmp4test.net"
+      photoThumbUrl: "https://flori-photo.vmp4test.net/"
+      clusterIpApi: ""
+      clusterIpPhoto: ""
+      clusterIpServer: ""
+      clusterIpWeb: ""
