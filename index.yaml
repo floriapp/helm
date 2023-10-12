@@ -3,9 +3,9 @@ entries:
   floriapp:
   - apiVersion: v2
     appVersion: "488"
-    created: "2023-10-12T11:38:25.612950134Z"
+    created: "2023-10-12T13:42:50.260695736Z"
     description: Install a flori.app environment
-    digest: 85ac73f3da532491f01444a83fce325ff5fedb6c937f01378a84b2e797cf021d
+    digest: 850e2a2fa59018e7c4548c94abc80c3434921280854b713d9e20a3da11556c58
     icon: https://raw.githubusercontent.com/floriapp/helm/main/floriapp-logo.png
     name: floriapp
     type: application
@@ -70,10 +70,10 @@ entries:
   floriapp-mongodb:
   - apiVersion: v2
     appVersion: 4.4.6
-    created: "2023-10-12T11:38:25.613405436Z"
+    created: "2023-10-12T13:42:50.261162955Z"
     description: Install Mongodb configured as a statefulset for use with a flori.app
       application in kubernetes
-    digest: c76c02d97b523ee6a4ed3a04687d39d528a70d42c81daf9d1fe85997bff69c84
+    digest: 2771edac6412edd42a26d4be3d0bff87402dc1681f3d29c6ef81df5e8eb71c8a
     name: floriapp-mongodb
     type: application
     urls:
@@ -159,12 +159,24 @@ entries:
   floritest:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-10-12T11:38:25.613831539Z"
+    created: "2023-10-12T13:42:50.261612074Z"
     description: A Helm chart for Kubernetes
-    digest: b9a94714d890f14c4616a33b1545e964f9da2a876013b2f477c56199680ac117
+    digest: 6d3fa7bc74b733dd534f67f88a3c35bb18927679b1d1593729c83a866a341d62
     name: floritest
     type: application
     urls:
     - https://floriapp.github.io/helm/floritest-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-12T11:38:25.611983628Z"
+  horti-id:
+  - apiVersion: v2
+    appVersion: "464"
+    created: "2023-10-12T13:42:50.262183697Z"
+    description: Install horti-id environment
+    digest: 8529921aec98563b1431094a0950848a2ffcb9e28b9c8bc9994a300d97a7f0c3
+    icon: https://raw.githubusercontent.com/floriapp/helm/main/floriapp-logo.png
+    name: horti-id
+    type: application
+    urls:
+    - https://floriapp.github.io/helm/horti-id-1.464.0.tgz
+    version: 1.464.0
+generated: "2023-10-12T13:42:50.259111172Z"
