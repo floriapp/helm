@@ -59,15 +59,3 @@ config:
       clusterIpApi: "10.23.70.11"
       clusterIpPhoto: "10.23.70.201"
       clusterIpWeb: "10.23.70.1"
-
-    vmp4all:
-      agent: "CotradrAalsmeer"
-      hostnameForGln: "vmp.vmp4all.net"
-#      hostnameForGln: "hortinl.net"
-      photoThumbUrl: "https://photo.flori.app/"
-#      photoThumbUrl: "https://photo.hortinl.app/"
-      clusterIpApi: "10.23.70.111"
-      clusterIpWeb: "10.23.70.101"
-
-
-

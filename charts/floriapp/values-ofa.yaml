@@ -62,13 +62,3 @@ config:
       clusterIpApi: "10.23.30.11"
       clusterIpPhoto: "10.23.30.201"
       clusterIpWeb: "10.23.30.1"
-
-    vmp4all:
-      agent: "CotradrAalsmeer"
-      hostnameForGln: "vmp.onlineflowerauction.app"
-      photoThumbUrl: "https://photo.onlineflowerauction.app/"
-      clusterIpApi: "10.23.30.111"
-      clusterIpWeb: "10.23.30.101"
-
-
-

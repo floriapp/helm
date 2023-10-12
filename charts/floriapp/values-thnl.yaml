@@ -58,14 +58,3 @@ config:
       clusterIpApi: "10.23.50.11"
       clusterIpPhoto: "10.23.50.201"
       clusterIpWeb: "10.23.50.1"
-
-    vmp4all:
-      agent: "CotradrAalsmeer"
-      hostnameForGln: "testhortinl.net"
-#      photoThumbUrl: "https://photo.testhortinl.app/"
-      photoThumbUrl: "https://photo.testflori.app/"
-      clusterIpApi: "10.23.50.111"
-      clusterIpWeb: "10.23.50.101"
-
-
-

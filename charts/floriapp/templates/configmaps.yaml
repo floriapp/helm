@@ -84,30 +84,6 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: config-30-data-vmp4all
-data:
-  30-data.ini: |
-    [data]
-    codering-url={{ .Values.config.coderingUrl }}
-    codering-username={{ .Values.config.coderingUsername }}
-    codering-password={{ .Values.config.coderingPassword }}
-    hosted-behind-proxy={{ .Values.config.hostedBehindProxy }}
-    known-proxies={{ .Values.config.knownProxies }}
-    photo-thumb-url={{ .Values.config.app.vmp4all.photoThumbUrl }}
-    vmp-agent={{ .Values.config.app.vmp4all.agent }}
-    vmp-hostname-for-gln={{ .Values.config.app.vmp4all.hostnameForGln }}
-
-    [services]
-    etrade=true
-    maintenance-active=false
-    operation-processing=true
-    smtp-mailer=true
-
----
-
-apiVersion: v1
-kind: ConfigMap
-metadata:
   name: config-35-hosting
 data:
   35-hosting.ini: |
