@@ -62,6 +62,9 @@ config:
   memoryLimits:
     hortiIdWeb: "4Gi"
 
+  ips:
+    clusterIpWeb: "10.25.140.1"
+
   app:
     floriapp:
       agent: "CotradrAalsmeer"
@@ -70,7 +73,3 @@ config:
       hostnameSuffix: ""
       hostnameForGln: "flori-api.vmp4test.net"
       photoThumbUrl: "https://flori-photo.vmp4test.net/"
-      clusterIpApi: ""
-      clusterIpPhoto: ""
-      clusterIpServer: ""
-      clusterIpWeb: ""

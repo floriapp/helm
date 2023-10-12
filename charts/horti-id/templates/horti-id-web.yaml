@@ -11,7 +11,7 @@ spec:
     {{- include "floriapp.selectorLabels" . | nindent 4 }}
     app.kubernetes.io/component: horti-id-web
   type: ClusterIP
-  clusterIP: "{{ .Values.config.app.floriapp.clusterIpWeb }}"
+  clusterIP: "{{ .Values.config.ips.clusterIpWeb }}"
 
 ---
 
