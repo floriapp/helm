@@ -12,7 +12,8 @@ jobs:
     # other steps
     - name: Edit chart version
       run: |
-        sed -i '19s/.*/version: 1.467.1/' charts/horti-id/Chart.yaml
+        sed -i '19s/.*/version: 1.${{ github.event.client_payload.build }}.0/' charts/horti-id/Chart.yaml
+        sed -i '25s/.*/appVersion: "${{ github.event.client_payload.build }}"/' charts/horti-id/Chart.yaml
     - name: git commit
       run: |
         git config user.email "lakerfield@gmail.com"
