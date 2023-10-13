@@ -1,0 +1,53 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: horti-id-import-job
+  labels:
+    {{- include "floriapp.labels" . | nindent 4 }}
+    app.kubernetes.io/component: horti-id-import
+spec:
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    metadata:
+      labels:
+        {{- include "floriapp.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: horti-id-import
+    spec:
+      template:
+        metadata:
+          labels:
+            {{- include "floriapp.selectorLabels" . | nindent 12 }}
+            app.kubernetes.io/component: horti-id-import
+        spec:
+          containers:
+          - name: horti-id-import
+            image: "{{ .Values.image.repository }}/horti-id-import:{{ .Values.image.tag | default .Chart.AppVersion }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            resources:
+              limits:
+                memory: 4Gi
+              requests:
+                memory: 2Gi
+            volumeMounts:
+            - name: horti-id-import-config-volume
+              mountPath: /app/config
+              readOnly: true
+          imagePullSecrets:
+          - name: acr-lakerfield
+          restartPolicy: Never
+          volumes:
+          - name: horti-id-import-config-volume
+            projected:
+              sources:
+              - configMap:
+                  name: config-00-base
+              - configMap:
+                  name: config-10-database
+              - configMap:
+                  name: config-20-mail
+              - configMap:
+                  name: config-30-data
+  schedule: 0 16 * * MON-FRI
+  successfulJobsHistoryLimit: 1
+
