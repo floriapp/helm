@@ -21,7 +21,9 @@ jobs:
         git add .
         git commit -m "Update horti-id chart to version ${{ github.event.client_payload.build }}"
         git push
+  
   release:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
