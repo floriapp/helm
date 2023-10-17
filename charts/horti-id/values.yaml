@@ -54,15 +54,19 @@ config:
   networkProxyKey: ""
 
   replicas:
+    hortiIdApi: "1"
     hortiIdWeb: "1"
 
   memoryRequests:
-    hortiIdWeb: "1Gi"
+    hortiIdApi: "1Gi"
+    hortiIdWeb: "256Mi"
 
   memoryLimits:
-    hortiIdWeb: "4Gi"
+    hortiIdApi: "4Gi"
+    hortiIdWeb: "1Gi"
 
   ips:
+    clusterIpApi: "10.25.140.11"
     clusterIpWeb: "10.25.140.1"
 
   app:
