@@ -105,7 +105,7 @@ data:
     auto-create=false
     configure-tls=false
     #hostname= #(default)
-    #domain=  #(default from proxy)
+    domain={{ .Values.config.networkDomain }}
     proxy-url={{ .Values.config.networkProxyUrl }}
     proxy-key={{ .Values.config.networkProxyKey }}
     
@@ -122,7 +122,7 @@ data:
     auto-create=true
     configure-tls=true
     #hostname= #(default)
-    #domain=  #(default from proxy)
+    domain={{ .Values.config.networkDomain }}
     proxy-url={{ .Values.config.networkProxyUrl }}
     proxy-key={{ .Values.config.networkProxyKey }}
     

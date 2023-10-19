@@ -57,6 +57,7 @@ config:
   knownProxies: "10.42.0.0"
   initialNetworkUrl: ""
 
+  networkDomain: ""
   networkProxyUrl: "https://proxy.unknown.local"
   networkProxyKey: ""
 
