@@ -1,0 +1,36 @@
+name: Floriapp build completed
+on:
+  repository_dispatch:
+    types: [floriapp-build-event]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    # other steps
+    - name: Edit chart version
+      run: |
+        sed -i '19s/.*/version: 1.${{ github.event.client_payload.build }}.0/' charts/floriapp/Chart.yaml
+        sed -i '25s/.*/appVersion: "${{ github.event.client_payload.build }}"/' charts/floriapp/Chart.yaml
+    - name: git commit
+      run: |
+        git config user.email "lakerfield@gmail.com"
+        git config user.name "Michael Lakerveld"
+        git add .
+        git commit -m "Update floriapp chart to version ${{ github.event.client_payload.build }}"
+        git push
+  
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v4
+        with:
+          ref: refs/heads/main
+      - name: Publish Helm charts
+        uses: stefanprodan/helm-gh-pages@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
