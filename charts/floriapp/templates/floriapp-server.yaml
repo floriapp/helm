@@ -63,16 +63,8 @@ spec:
         projected:
           sources:
           - configMap:
-              name: config-00-base
+              name: config-10-application
           - configMap:
-              name: config-10-database
+              name: config-20-hosting
           - configMap:
-              name: config-20-mail
-          - configMap:
-              name: config-30-data-floriapp
-          - configMap:
-              name: config-35-hosting
-          - configMap:
-              name: config-40-network-tls
-          - configMap:
-              name: config-45-network-server
+              name: config-30-network

@@ -1,8 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: floriapp-mailserver
+  name: floriapp-mail
 spec:
+  type: ClusterIP
   ports:
   - name: http
     port: 80
@@ -10,65 +11,65 @@ spec:
   - name: smtp
     port: 25
     protocol: TCP
+  - name: smtps
+    port: 587
+    protocol: TCP
   selector:
     {{- include "floriapp.selectorLabels" . | nindent 4 }}
-    app.kubernetes.io/component: floriapp-mailserver
-  type: ClusterIP
+    app.kubernetes.io/component: floriapp-mail
+  clusterIP: "{{ .Values.config.app.floriapp.clusterIpMail }}"
 
 ---
 
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
-  name: floriapp-mailserver
+  name: floriapp-mail
   labels:
     {{- include "floriapp.labels" . | nindent 4 }}
-    app.kubernetes.io/component: floriapp-mailserver
+    app.kubernetes.io/component: floriapp-mail
 spec:
   replicas: {{ .Values.config.replicas.floriappMail }}
   selector:
     matchLabels:
       {{- include "floriapp.selectorLabels" . | nindent 6 }}
-      app.kubernetes.io/component: floriapp-mailserver
+      app.kubernetes.io/component: floriapp-mail
+  serviceName: floriapp-mail
   template:
     metadata:
       labels:
         {{- include "floriapp.selectorLabels" . | nindent 8 }}
-        app.kubernetes.io/component: floriapp-mailserver
+        app.kubernetes.io/component: floriapp-mail
     spec:
       containers:
-      - name: floriapp-mailserver
-        image: "{{ .Values.image.repository }}/floriapp-mailserver:{{ .Values.image.tag | default .Chart.AppVersion }}"
+      - name: floriapp-mail
+        image: "{{ .Values.image.repository }}/floriapp-mail:{{ .Values.image.tag | default .Chart.AppVersion }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: 80
           name: http
         - containerPort: 25
           name: smtp
+        - containerPort: 587
+          name: smtps
         resources:
           limits:
             memory: {{ .Values.config.memoryLimits.floriappMail }}
           requests:
             memory: {{ .Values.config.memoryRequests.floriappMail }}
         volumeMounts:
-        - name: floriapp-mailserver-config-volume
+        - name: floriapp-mail-config-volume
           mountPath: /app/config
           readOnly: true
       imagePullSecrets:
       - name: acr-lakerfield
       volumes:
-      - name: floriapp-mailserver-config-volume
+      - name: floriapp-mail-config-volume
         projected:
           sources:
           - configMap:
-              name: config-00-base
+              name: config-10-application
           - configMap:
-              name: config-10-database
+              name: config-20-hosting
           - configMap:
-              name: config-20-mail
-          - configMap:
-              name: config-30-data-floriapp
-          - configMap:
-              name: config-35-hosting
-          - configMap:
-              name: config-40-network
+              name: config-30-network

@@ -1,32 +1,17 @@
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: config-00-base
+  name: config-10-application
 data:
-  00-base.ini: |
+  10-application.ini: |
     environment={{ .Values.config.environment }}
 
----
-
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: config-10-database
-data:
-  10-database.ini: |
     [storage]
     mode=ConnectionString
     connectionstring={{ .Values.config.connectionstring }}
     database={{ .Values.config.database }}
 
----
-
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: config-20-mail
-data:
-  20-mail.ini: |
     [mail]
     method={{ .Values.config.mailMethod }}
 
@@ -45,14 +30,6 @@ data:
     from-allow-use-of-mailbox-address=true
     bcc={{ .Values.config.mailBcc }}
 
----
-
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: config-30-data-floriapp
-data:
-  30-data.ini: |
     [data]
     auction-transaction-direct-send-ekt={{ .Values.config.auctionTransactionDirectSendEkt }}
     auction-transaction-direct-place-order={{ .Values.config.auctionTransactionDirectPlaceOrder }}
@@ -84,9 +61,9 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: config-35-hosting
+  name: config-20-hosting
 data:
-  35-hosting.ini: |
+  20-hosting.ini: |
     [hosting]
     hosted-behind-proxy={{ .Values.config.hostedBehindProxy }}
     known-networks={{ .Values.config.knownNetworks }}
@@ -97,45 +74,15 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: config-40-network
+  name: config-30-network
 data:
-  40-network.ini: |
+  30-network.ini: |
     [network:node]
-    auto-configure=true
-    auto-create=false
-    configure-tls=false
     #hostname= #(default)
     domain={{ .Values.config.networkDomain }}
-    proxy-url={{ .Values.config.networkProxyUrl }}
-    proxy-key={{ .Values.config.networkProxyKey }}
-    
----
-
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: config-40-network-tls
-data:
-  40-network.ini: |
-    [network:node]
     auto-configure=true
-    auto-create=true
-    configure-tls=true
-    #hostname= #(default)
-    domain={{ .Values.config.networkDomain }}
     proxy-url={{ .Values.config.networkProxyUrl }}
     proxy-key={{ .Values.config.networkProxyKey }}
+    #listen-ips=
     
 ---
-
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: config-45-network-server
-data:
-  50-network-server.ini: |
-    [network:server]
-    enabled=true
-    
----
-

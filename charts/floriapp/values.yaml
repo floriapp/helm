@@ -91,6 +91,7 @@ config:
       hostnameForGln: "flori-api.vmp4test.net"
       photoThumbUrl: "https://flori-photo.vmp4test.net/"
       clusterIpApi: ""
+      clusterIpMail: ""
       clusterIpPhoto: ""
       clusterIpServer: ""
       clusterIpWeb: ""
