@@ -40,8 +40,8 @@ spec:
           - name: floriapp-import-config-volume
             projected:
               sources:
-          - configMap:
-              name: config-10-application
+              - configMap:
+                  name: config-10-application
   schedule: 0 17 * * MON-FRI
   successfulJobsHistoryLimit: 1
 
