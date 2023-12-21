@@ -11,6 +11,7 @@ data:
     mode=ConnectionString
     connectionstring={{ .Values.config.connectionstring }}
     database={{ .Values.config.database }}
+    server-responsible-for-database-updates={{ .Values.config.serverResponsibleForDatabaseUpdates }}
 
     [mail]
     method={{ .Values.config.mailMethod }}

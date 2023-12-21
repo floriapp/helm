@@ -31,6 +31,7 @@ config:
   
   connectionstring: "mongodb://mongo-0.mongodb:27017"
   database: "flori-default"
+  serverResponsibleForDatabaseUpdates: "floriapp-server-0"
 
   mailMethod: "Smtp"
   mailDirectory: "/app/pickup"
