@@ -46,9 +46,15 @@ data:
     kosmos-new-user-mail={{ .Values.config.kosmosNewUserMail }}
     known-proxies={{ .Values.config.knownProxies }}
     photo-thumb-url={{ .Values.config.app.floriapp.photoThumbUrl }}
+    initial-admin-password={{ .Values.config.app.floriapp.initialAdminPassword }}
+    initial-admin-token={{ .Values.config.app.floriapp.initialAdminToken }}
     initial-network-url={{ .Values.config.initialNetworkUrl }}
     vmp-agent={{ .Values.config.app.floriapp.agent }}
     vmp-hostname-for-gln={{ .Values.config.app.floriapp.hostnameForGln }}
+
+    [plugins]
+    build-with-symbols={{ .Values.config.pluginBuildWithSymbols }}
+    build-debug={{ .Values.config.pluginBuildDebug }}
 
     [services]
     etrade=true

@@ -61,6 +61,9 @@ config:
   networkProxyUrl: "https://proxy.unknown.local"
   networkProxyKey: ""
 
+  pluginBuildWithSymbols: "true"
+  pluginBuildDebug: "false"
+
   replicas:
     floriappApi: "1"
     floriappMail: "0"
@@ -89,6 +92,8 @@ config:
       domainNameWeb: ""
       hostnameSuffix: ""
       hostnameForGln: "flori-api.vmp4test.net"
+      initialAdminPassword: ""
+      initialAdminToken: ""
       photoThumbUrl: "https://flori-photo.vmp4test.net/"
       clusterIpApi: ""
       clusterIpMail: ""
