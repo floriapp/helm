@@ -40,6 +40,9 @@ data:
     domain-name-api={{ .Values.config.app.floriapp.domainNameApi }}
     domain-name-web={{ .Values.config.app.floriapp.domainNameWeb }}
     hosted-behind-proxy={{ .Values.config.hostedBehindProxy }}
+    horti-id-api-url={{ .Values.config.hortiIdApiUrl }}
+    horti-id-application-token={{ .Values.config.hortiIdApplicationToken }}
+    horti-id-external-token={{ .Values.config.hortiIdExternalToken }}
     kosmos-url={{ .Values.config.kosmosUrl }}
     kosmos-username={{ .Values.config.kosmosUsername }}
     kosmos-password={{ .Values.config.kosmosPassword }}
