@@ -57,8 +57,8 @@ data:
     codering-url={{ .Values.config.coderingUrl }}
     codering-username={{ .Values.config.coderingUsername }}
     codering-password={{ .Values.config.coderingPassword }}
-    domain-name-api={{ .Values.config.app.floriapp.domainNameApi }}
-    domain-name-web={{ .Values.config.app.floriapp.domainNameWeb }}
+    domain-name-api={{ .Values.config.domainNameApi }}
+    domain-name-web={{ .Values.config.domainNameWeb }}
 
 ---
 

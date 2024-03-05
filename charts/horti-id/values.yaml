@@ -45,6 +45,8 @@ config:
   coderingUrl: "http://deel.ml/code"
   coderingUsername: ""
   coderingPassword: ""
+  domainNameApi: ""
+  domainNameWeb: ""
   hostedBehindProxy: "true"
   knownNetworks: "10.42.0.0/16"
   knownProxies: "10.42.0.0"
@@ -68,12 +70,3 @@ config:
   ips:
     clusterIpApi: "10.25.140.11"
     clusterIpWeb: "10.25.140.1"
-
-  app:
-    floriapp:
-      agent: "CotradrAalsmeer"
-      domainNameApi: ""
-      domainNameWeb: ""
-      hostnameSuffix: ""
-      hostnameForGln: "flori-api.vmp4test.net"
-      photoThumbUrl: "https://flori-photo.vmp4test.net/"
