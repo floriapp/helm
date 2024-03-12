@@ -2,6 +2,17 @@ apiVersion: v1
 entries:
   floriapp:
   - apiVersion: v2
+    appVersion: "571"
+    created: "2024-03-12T16:49:42.39216234Z"
+    description: Install a flori.app environment
+    digest: 9656f89f34b7ba1a048c39bb64f61642e7383cce54bc26d57095fc18c675d7f1
+    icon: https://raw.githubusercontent.com/floriapp/helm/main/floriapp-logo.png
+    name: floriapp
+    type: application
+    urls:
+    - https://floriapp.github.io/helm/floriapp-1.571.0.tgz
+    version: 1.571.0
+  - apiVersion: v2
     appVersion: "568"
     created: "2024-03-12T14:00:24.025977492Z"
     description: Install a flori.app environment
@@ -653,10 +664,10 @@ entries:
   floriapp-mongodb:
   - apiVersion: v2
     appVersion: 4.4.6
-    created: "2024-03-12T14:00:24.026763213Z"
+    created: "2024-03-12T16:49:42.392488212Z"
     description: Install Mongodb configured as a statefulset for use with a flori.app
       application in kubernetes
-    digest: a13fce23139c58d66c872ced503574043900f5c49489f93aae3b9740bbf9569a
+    digest: 3af8b118bf02549503efd649136ba25a402091b95cacaafd8c3f3234681e5dec
     name: floriapp-mongodb
     type: application
     urls:
@@ -742,9 +753,9 @@ entries:
   floritest:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-03-12T14:00:24.027119566Z"
+    created: "2024-03-12T16:49:42.39284399Z"
     description: A Helm chart for Kubernetes
-    digest: 1db7a9ff46e415f76e8204c19c1e0af2cc77452ca6b591ffe5029df6ca79e9ee
+    digest: 501623f43cc5e2cab3b848e2b0714f28be05494e0f8431ce345eaa5f6ab363d6
     name: floritest
     type: application
     urls:
@@ -753,9 +764,9 @@ entries:
   horti-id:
   - apiVersion: v2
     appVersion: "524"
-    created: "2024-03-12T14:00:24.027479746Z"
+    created: "2024-03-12T16:49:42.393203474Z"
     description: Install horti-id environment
-    digest: c01b09522b68210f9a8cd7befc0b2ceadf4b79d0d2f64a668e7e171e19ddcbed
+    digest: edfdf89d8791f95406828959ea26a49a73c2c8a19a3f802aba20304335111a0e
     icon: https://raw.githubusercontent.com/floriapp/helm/main/floriapp-logo.png
     name: horti-id
     type: application
@@ -949,4 +960,4 @@ entries:
     urls:
     - https://floriapp.github.io/helm/horti-id-1.464.0.tgz
     version: 1.464.0
-generated: "2024-03-12T14:00:24.024752022Z"
+generated: "2024-03-12T16:49:42.391385072Z"
