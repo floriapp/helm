@@ -51,6 +51,7 @@ config:
   hortiIdApiUrl: "https://horti-id.net/"
   hortiIdApplicationToken: ""
   hortiIdExternalToken: ""
+  hortiIdAi2Token: ""
   kosmosUrl: ""
   kosmosUsername: ""
   kosmosPassword: ""

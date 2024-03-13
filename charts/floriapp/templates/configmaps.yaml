@@ -43,6 +43,7 @@ data:
     horti-id-api-url={{ .Values.config.hortiIdApiUrl }}
     horti-id-application-token={{ .Values.config.hortiIdApplicationToken }}
     horti-id-external-token={{ .Values.config.hortiIdExternalToken }}
+    horti-id-ai2-token={{ .Values.config.hortiIdAi2Token }}
     kosmos-url={{ .Values.config.kosmosUrl }}
     kosmos-username={{ .Values.config.kosmosUsername }}
     kosmos-password={{ .Values.config.kosmosPassword }}
