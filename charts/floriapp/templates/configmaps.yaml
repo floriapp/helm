@@ -32,6 +32,7 @@ data:
     bcc={{ .Values.config.mailBcc }}
 
     [data]
+    ai2-incasso-mail={{ .Values.config.ai2IncassoMail }}
     auction-transaction-direct-send-ekt={{ .Values.config.auctionTransactionDirectSendEkt }}
     auction-transaction-direct-place-order={{ .Values.config.auctionTransactionDirectPlaceOrder }}
     codering-url={{ .Values.config.coderingUrl }}

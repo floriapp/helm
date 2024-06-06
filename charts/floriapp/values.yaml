@@ -43,6 +43,7 @@ config:
   mailFromname: "unknown"
   mailBcc: "archive@unknown.local"
 
+  ai2IncassoMail: ""
   auctionTransactionDirectSendEkt: ""
   auctionTransactionDirectPlaceOrder: ""
   coderingUrl: "http://deel.ml/code"
