@@ -40,6 +40,8 @@ data:
     codering-password={{ .Values.config.coderingPassword }}
     domain-name-api={{ .Values.config.app.floriapp.domainNameApi }}
     domain-name-web={{ .Values.config.app.floriapp.domainNameWeb }}
+    facility-api-url={{ .Values.config.facilityApiUrl }}
+    facility-token={{ .Values.config.facilityToken }}
     hosted-behind-proxy={{ .Values.config.hostedBehindProxy }}
     horti-id-api-url={{ .Values.config.hortiIdApiUrl }}
     horti-id-application-token={{ .Values.config.hortiIdApplicationToken }}

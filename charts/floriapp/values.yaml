@@ -49,6 +49,8 @@ config:
   coderingUrl: "http://deel.ml/code"
   coderingUsername: ""
   coderingPassword: ""
+  facilityApiUrl: ""
+  facilityToken: ""
   hortiIdApiUrl: "https://horti-id.net/"
   hortiIdApplicationToken: ""
   hortiIdExternalToken: ""
