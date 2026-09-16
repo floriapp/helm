@@ -2,6 +2,17 @@ apiVersion: v1
 entries:
   floriapp:
   - apiVersion: v2
+    appVersion: "735"
+    created: "2026-09-16T13:49:08.880455279Z"
+    description: Install a flori.app environment
+    digest: cc57bad8c113ac3dabab02392e7d879825f3b88bc79a00e9e71c61a5f7efeea8
+    icon: https://raw.githubusercontent.com/floriapp/helm/main/floriapp-logo.png
+    name: floriapp
+    type: application
+    urls:
+    - https://floriapp.github.io/helm/floriapp-1.735.0.tgz
+    version: 1.735.0
+  - apiVersion: v2
     appVersion: "734"
     created: "2026-09-16T11:56:40.138852597Z"
     description: Install a flori.app environment
@@ -2149,10 +2160,10 @@ entries:
   floriapp-mongodb:
   - apiVersion: v2
     appVersion: 4.4.6
-    created: "2026-09-16T11:56:40.139112191Z"
+    created: "2026-09-16T13:49:08.880972368Z"
     description: Install Mongodb configured as a statefulset for use with a flori.app
       application in kubernetes
-    digest: c122e7249bac680eaa80691949a4bacf4d9413be167f5c89933d37c629c337fa
+    digest: 9e1c261f8c47a5d48a20f677bd5eb593421294e8bd7fc6264f4f238efb7bb0ff
     name: floriapp-mongodb
     type: application
     urls:
@@ -2249,9 +2260,9 @@ entries:
   horti-id:
   - apiVersion: v2
     appVersion: "600"
-    created: "2026-09-16T11:56:40.139426456Z"
+    created: "2026-09-16T13:49:08.881266244Z"
     description: Install horti-id environment
-    digest: e79f31ab1a22eeb8e144e4915d675b3388791c2036df1f506ab2cbce6d5b7c3e
+    digest: 0bdf033896e1da3429b4d565501285909dc21ad2953b6e37f511b05c2970b976
     icon: https://raw.githubusercontent.com/floriapp/helm/main/floriapp-logo.png
     name: horti-id
     type: application
@@ -2610,4 +2621,4 @@ entries:
     urls:
     - https://floriapp.github.io/helm/horti-id-1.464.0.tgz
     version: 1.464.0
-generated: "2026-09-16T11:56:40.137660479Z"
+generated: "2026-09-16T13:49:08.879515431Z"
